@@ -14,6 +14,7 @@ region_name = "ap-northeast-1"
 
 level = os.environ.get('LOG_LEVEL', 'DEBUG')
 
+
 def logger_level():
     if level == 'CRITICAL':
         return 50
@@ -28,8 +29,10 @@ def logger_level():
     else:
         return 0
 
+
 logger = logging.getLogger()
 logger.setLevel(logger_level())
+
 
 def get_secret():
 
@@ -63,7 +66,7 @@ def tweet_image(twitter, img_url):
     files = {"media": data}
     res_media = twitter.post(url_media, files=files)
     logger.info(res_media)
-    
+
     return res_media
 
 
@@ -73,7 +76,7 @@ def tweet_text(twitter, message, media_ids):
     params = {'status': message, "media_ids": media_ids}
     res_text = twitter.post(url_text, params=params)
     logger.info(res_text)
-    
+
     return res_text
 
 
