@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/kannkyo/miniconda3/envs/faceswap/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
