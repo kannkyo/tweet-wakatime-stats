@@ -57,11 +57,11 @@ def lambda_handler(event, context):
 
         media_id = tweet_wakatime(
             twitter=twitter,
-            img_url="https://wakatime.com/share/@kannkyo/75b1a5a9-8b0d-47cf-a77b-2bddebd017f3.png")
+            img_url=os.environ.get('LANGUAGES_URL'))
 
         media_id2 = tweet_wakatime(
             twitter=twitter,
-            img_url="https://wakatime.com/share/@kannkyo/5884f410-5034-40c5-a463-b8c1b7a04289.png")
+            img_url=os.environ.get('CODING_ACTIVITY_URL'))
 
         message = "今週の開発時間 measured by #wakatime tweeted by #aws_lambda"
         res_text = tweet_text(
