@@ -17,7 +17,7 @@ def tweet_image(twitter: OAuth1Session, img_url: str):
     return res_media
 
 
-def tweet_text(twitter: OAuth1Session, message: str, media_ids: str):
+def tweet_text(twitter: OAuth1Session, message: str, media_ids: str = None):
     url_text = "https://api.twitter.com/1.1/statuses/update.json"
 
     params = {'status': message, "media_ids": media_ids}
