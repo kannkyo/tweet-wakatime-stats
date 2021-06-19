@@ -43,8 +43,8 @@ def lambda_handler(event, context):
 
     try:
         secret = get_secret(
-            secret_name="Twitter/tweet-wakatime-stats",
-            region_name="ap-northeast-1")
+            region_name="ap-northeast-1",
+            secret_name=os.environ.get('TWITTER_SECRET_NAME'))
 
         logger.info(secret)
 
