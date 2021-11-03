@@ -77,7 +77,7 @@ def lambda_handler(event, context):
             twitter=twitter,
             img_url=os.environ.get('CODING_ACTIVITY_URL'))
 
-        message = "今週の開発時間 measured by #wakatime tweeted by #aws_lambda"
+        message = os.environ.get('MESSAGE')
         res_text = tweet_text(
             twitter=twitter,
             message=message,
