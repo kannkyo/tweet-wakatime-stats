@@ -7,6 +7,8 @@ import traceback
 from requests_oauthlib import OAuth1Session
 from secret import get_secret
 from twitter import tweet_image, tweet_text
+import urllib.request
+import time
 
 level = os.environ.get('LOG_LEVEL', 'DEBUG')
 
@@ -31,11 +33,23 @@ logger.setLevel(logger_level())
 
 
 def tweet_wakatime(twitter: OAuth1Session, img_url: str):
+    peek_wakatime(img_url)
+
     res_media = tweet_image(twitter, img_url)
     if res_media.status_code != 200:
         exit()
     media_id = json.loads(res_media.text)['media_id']
     return media_id
+
+
+def peek_wakatime(img_url: str):
+    """"wakatimeに画像生成を促すため、wakatimeを呼び出す
+
+    Args:
+        img_url (str): wakatimeのURL
+    """
+    response = urllib.request.urlopen(img_url)
+    time.sleep(60)
 
 
 def lambda_handler(event, context):

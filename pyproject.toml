@@ -1,0 +1,18 @@
+[tool.poetry]
+authors = ["kannkyo <15080890+kannkyo@users.noreply.github.com>"]
+description = ""
+name = "tweet-wakatime-stats"
+version = "1.0.1"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.5.7"
+flake8 = "^3.9.2"
+pycodestyle = "^2.7.0"
+toml = "^0.10.2"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
