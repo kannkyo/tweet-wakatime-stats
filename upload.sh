@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FUNCTION_NAME=tweet-wakatime-stats
+FUNCTION_NAME=tweet-wakatime-monthly-stats
 
 rm -f lambda.zip
 
